@@ -1,0 +1,40 @@
+# 应用名称
+spring:
+  application:
+    name: quickfixtest
+
+server:
+  port: 8081
+
+quickfixj:
+  client:
+    config: classpath:quickfixj-client.cfg
+    auto-startup: false
+#    force-disconnect: false
+#    phase: 0
+    jmx-enabled: true
+    concurrent:
+      enabled: true
+      useDefaultExecutorFactory: false
+      queueCapacity: 1000
+      corePoolSize: 5
+      maxPoolSize: 10
+      allowCoreThreadTimeOut: true
+      keepAliveSeconds: 60
+      waitForTasksToCompleteOnShutdown: false
+      awaitTerminationMillis: 0
+      threadNamePrefix: "QuickFixJ thread-"
+#    message-store-factory: memory
+#    log-factory: screen
+
+management:
+  endpoint:
+    quickfixjclient:
+      enabled: true
+    quickfixjserver:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
