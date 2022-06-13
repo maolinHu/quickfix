@@ -14,7 +14,7 @@ public class ApplicationMessageCracker extends MessageCracker {
 
     @Override
     public void onMessage(Message message, SessionID sessionID) throws FieldNotFound, UnsupportedMessageType, IncorrectTagValue {
-        super.onMessage(message, sessionID);
+        // super.onMessage(message, sessionID);
 
         // Handle the message here
         log.info("*****************");
